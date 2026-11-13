@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Hafidz Aditya Zaini - Personal Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#2563eb',
+                            orange: '#f97316',
+                            amber: '#fbbf24',
+                            dark: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased relative selection:bg-brand-orange selection:text-white">
+
+    <!-- CANVAS PARTICLES BACKGROUND (Hero Section) -->
+    <canvas id="particles-canvas" class="absolute top-0 left-0 w-full h-[100vh] z-0 pointer-events-none"></canvas>
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center text-white text-xl font-extrabold shadow-md shadow-blue-500/30 group-hover:scale-105 transition">
+                        <i class="fa-solid me-0.5 fa-code"></i>
+                    </div>
+                    <span class="text-xl font-bold text-slate-900 tracking-tight">Hafidz<span class="text-brand-orange">.dev</span></span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-slate-600 text-sm">
+                    <a href="#home" class="hover:text-brand-blue transition">Home</a>
+                    <a href="#about" class="hover:text-brand-blue transition">About</a>
+                    <a href="#skills" class="hover:text-brand-blue transition">Skills</a>
+                    <a href="#education" class="hover:text-brand-blue transition">Education</a>
+                    <a href="#work" class="hover:text-brand-blue transition">Work</a>
+                    <a href="#execution-plan" class="hover:text-brand-blue transition">Execution Plan</a>
+                    <a href="#contact" class="hover:text-brand-blue transition">Contact</a>
+                </div>
+
+                <!-- Action Button -->
+                <div class="hidden md:block">
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-slate-900 text-white font-medium text-sm hover:bg-brand-blue shadow-lg shadow-slate-900/10 transition duration-300">
+                        Hubungi Saya
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-brand-blue focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-4 space-y-3">
+            <a href="#home" class="block font-medium text-slate-600 hover:text-brand-blue py-1">Home</a>
+            <a href="#about" class="block font-medium text-slate-600 hover:text-brand-blue py-1">About</a>
+            <a href="#skills" class="block font-medium text-slate-600 hover:text-brand-blue py-1">Skills</a>
+            <a href="#education" class="block font-medium text-slate-600 hover:text-brand-blue py-1">Education</a>
+            <a href="#work" class="block font-medium text-slate-600 hover:text-brand-blue py-1">Work</a>
+            <a href="#execution-plan" class="block font-medium text-slate-600 hover:text-brand-blue py-1">Execution Plan</a>
+            <a href="#contact" class="block font-medium text-slate-600 hover:text-brand-blue py-1">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column Text Content -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-blue text-sm font-semibold tracking-wide">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-orange animate-pulse"></span>
+                        Project 1.0 Personal Branding
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Halo Semua, <br>
+                        Saya <span class="text-brand-orange">Hafidz Aditya</span>
+                    </h1>
+
+                    <div class="text-xl sm:text-2xl font-bold text-slate-700 h-10 flex items-center justify-center lg:justify-start">
+                        <span>Saya Seorang&nbsp;</span>
+                        <span id="typing-text" class="text-brand-blue typing-cursor"></span>
+                    </div>
+
+                    <p class="text-slate-600 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Siswa Kelas 12 yang berfokus pada pengembangan web modern dan perancangan antarmuka pengguna (UI/UX Design) yang responsif serta bernilai estetika tinggi.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#about" class="px-8 py-4 rounded-full bg-brand-blue hover:bg-blue-700 text-white font-semibold text-base shadow-lg shadow-blue-500/30 flex items-center gap-3 transition transform hover:-translate-y-0.5">
+                            Tentang Saya <i class="fa-solid fa-arrow-down text-sm"></i>
+                        </a>
+                        <a href="#contact" class="px-8 py-4 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-semibold text-base shadow-md transition transform hover:-translate-y-0.5">
+                            Sewa Jasa
+                        </a>
+                    </div>
+
+                    <!-- Social Links Badges -->
+                    <div class="pt-6 flex items-center justify-center lg:justify-start gap-3">
+                        <a href="https://wa.me/-" target="_blank" class="w-11 h-11 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center text-emerald-600 hover:bg-emerald-600 hover:text-white transition duration-300">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </a>
+                        <a href="mailto:hayaandn@gmail.com" class="w-11 h-11 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center text-rose-500 hover:bg-rose-500 hover:text-white transition duration-300">
+                            <i class="fa-solid fa-envelope text-lg"></i>
+                        </a>
+                        <a href="https://github.com/hafidzadityazaini" target="_blank" class="w-11 h-11 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center text-slate-800 hover:bg-slate-800 hover:text-white transition duration-300">
+                            <i class="fa-brands fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/douuts/" target="_blank" class="w-11 h-11 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center text-pink-600 hover:bg-pink-600 hover:text-white transition duration-300">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column Photo Badge -->
+                <div class="lg:col-span-5 flex justify-center relative">
+                    <div class="relative">
+                        <!-- Yellow Badge Outer Ring -->
+                        <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-amber-400 to-yellow-300 flex items-center justify-center shadow-2xl shadow-amber-300/50 p-3 relative overflow-hidden">
+                            <!-- Inner Photo Wrap -->
+                            <div class="w-full h-full rounded-full overflow-hidden bg-slate-900 border-4 border-white shadow-inner flex items-center justify-center">
+                                <img src="hafidz.png" alt="Muhammad Hafidz Aditya Zaini" class="w-full h-full object-cover object-top hover:scale-105 transition duration-500">
+                            </div>
+                        </div>
+
+                        <!-- Floating Experience Badge -->
+                        <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-orange-100 text-brand-orange flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-semibold uppercase">Status Siswa</p>
+                                <p class="text-sm font-bold text-slate-900">Kelas 12 - Web Dev</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Project Status Badge -->
+                        <div class="absolute top-4 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg font-bold">
+                                <i class="fa-solid fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-semibold">Project Status</p>
+                                <p class="text-sm font-bold text-slate-900">Project 1.0 Ready</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- About Image Box -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md">
+                        <div class="absolute top-0 -left-4 w-72 h-72 bg-blue-100 rounded-3xl mix-blend-multiply filter blur-xl opacity-70"></div>
+                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-amber-100 rounded-3xl mix-blend-multiply filter blur-xl opacity-70"></div>
+                        <div class="relative bg-white p-3 rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                            <img src="hafidz.png" alt="Muhammad Hafidz Aditya Zaini" class="w-full h-auto rounded-2xl object-cover max-h-[460px]">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block px-3 py-1 bg-orange-100 text-brand-orange text-xs font-bold rounded-md uppercase tracking-wider">
+                        About Me
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        Muhammad Hafidz Aditya Zaini
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Saya adalah seorang siswa Kelas 12 yang memiliki passion tinggi dalam bidang <span class="font-semibold text-slate-800">Web Development</span> dan <span class="font-semibold text-slate-800">UI/UX Design</span>. Dalam kurun waktu pembelajaran, saya aktif membangun proyek-proyek landing page modern yang tidak hanya menarik secara visual tetapi juga memiliki fungsi performa yang cepat dan responsif.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Portofolio ini merupakan bagian dari eksekusi **Project 1.0 (19 Oktober - 14 November 2026)** yang mencakup tahap perancangan wireframe, slicing HTML/CSS, peer review, hingga deployment repositori publik di GitHub.
+                    </p>
+
+                    <!-- Key Info Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                            <span class="text-xs text-slate-400 font-semibold block">Email</span>
+                            <span class="text-sm font-bold text-slate-800">hayaandn@gmail.com</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                            <span class="text-xs text-slate-400 font-semibold block">WhatsApp</span>
+                            <span class="text-sm font-bold text-slate-800">+62 812-3456-7890</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                            <span class="text-xs text-slate-400 font-semibold block">Lokasi</span>
+                            <span class="text-sm font-bold text-slate-800">Indonesia</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                            <span class="text-xs text-slate-400 font-semibold block">Spesialisasi</span>
+                            <span class="text-sm font-bold text-slate-800">Frontend & UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-blue text-sm font-bold uppercase tracking-wider">Keahlian & Toolkit</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Skills & Technologies</h2>
+                <p class="text-slate-600 mt-3">Beberapa teknologi dan aplikasi yang saya kuasai dalam proses pembuatan website dan desain.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 text-center hover:shadow-md hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center text-3xl">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800">HTML5</h3>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 text-center hover:shadow-md hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-3xl">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800">CSS3</h3>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 text-center hover:shadow-md hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center text-3xl">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800">JavaScript</h3>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 text-center hover:shadow-md hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-sky-50 text-sky-500 flex items-center justify-center text-3xl">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800">Tailwind</h3>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 text-center hover:shadow-md hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-3xl">
+                        <i class="fa-brands fa-figma"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800">Figma UI/UX</h3>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 text-center hover:shadow-md hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center text-3xl">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800">GitHub</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-orange text-sm font-bold uppercase tracking-wider">Pendidikan</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Education Background</h2>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200/70 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-blue text-white flex items-center justify-center text-xl shrink-0 mt-1 sm:mt-0">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">Siswa Kelas 12</h3>
+                            <p class="text-slate-600 text-sm">Persiapan Industri & Dunia Kerja / Freelance</p>
+                            <p class="text-xs text-slate-400 mt-1">Fokus Pembelajaran: Frontend Web Development & UI/UX Design</p>
+                        </div>
+                    </div>
+                    <span class="px-4 py-1.5 bg-blue-100 text-brand-blue text-xs font-bold rounded-full">
+                        2026 Active
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK / PORTFOLIO SECTION (DENGAN REFRESH PROYEK REAL) -->
+    <section id="work" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-blue text-sm font-bold uppercase tracking-wider">Hasil Karya</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Featured Projects</h2>
+                <p class="text-slate-600 mt-2">Berikut adalah beberapa aplikasi dan platform web live yang telah saya kembangkan.</p>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Tzunance -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/70 shadow-sm hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="h-48 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-cyan-600 to-blue-600 opacity-90"></div>
+                        <i class="fa-solid fa-chart-line text-6xl text-white/30"></i>
+                        <span class="absolute top-4 right-4 bg-white/90 text-slate-900 text-xs font-bold px-3 py-1 rounded-full">Netlify</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Tzunance</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Platform aplikasi web manajemen keuangan interaktif untuk melacak transaksi, anggaran, dan analisis finansial secara modern.</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-xs font-semibold text-brand-blue">Web App / Finance</span>
+                            <a href="https://tzunance.netlify.app/" target="_blank" class="text-sm font-bold text-brand-blue hover:text-brand-orange transition flex items-center gap-1">Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Tzuwiing -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/70 shadow-sm hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="h-48 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-purple-600 to-pink-500 opacity-90"></div>
+                        <i class="fa-solid fa-feather-pointed text-6xl text-white/30"></i>
+                        <span class="absolute top-4 right-4 bg-white/90 text-slate-900 text-xs font-bold px-3 py-1 rounded-full">Vercel</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Tzuwiing</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Aplikasi web modern yang dikembangkan dengan tampilan antarmuka bersih dan performa cepat yang di-deploy di Vercel.</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-xs font-semibold text-purple-600">Web Application</span>
+                            <a href="https://tzuwiing.vercel.app/" target="_blank" class="text-sm font-bold text-purple-600 hover:text-brand-orange transition flex items-center gap-1">Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: BMI Calculator -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/70 shadow-sm hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="h-48 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-emerald-600 to-teal-500 opacity-90"></div>
+                        <i class="fa-solid fa-calculator text-6xl text-white/30"></i>
+                        <span class="absolute top-4 right-4 bg-white/90 text-slate-900 text-xs font-bold px-3 py-1 rounded-full">Netlify</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">BMI Calculator</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Kalkulator Indeks Massa Tubuh (Body Mass Index) interaktif untuk menghitung status berat badan ideal secara real-time.</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-xs font-semibold text-emerald-600">Health Utility Tool</span>
+                            <a href="https://bmicalculating.netlify.app/" target="_blank" class="text-sm font-bold text-emerald-600 hover:text-brand-orange transition flex items-center gap-1">Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXECUTION PLAN TIMELINE SECTION -->
+    <section id="execution-plan" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-orange text-sm font-bold uppercase tracking-wider">Jadwal Kerja</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Execution Plan Project 1.0</h2>
+                <p class="text-slate-600 mt-2">Periode Pelaksanaan: 19 Oktober - 14 November 2026</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Fase 1 -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border-l-4 border-brand-blue shadow-sm">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-3">
+                        <span class="px-3 py-1 rounded-md bg-blue-100 text-brand-blue text-xs font-bold inline-block w-fit">FASE 1 (19 - 31 OKTOBER 2026)</span>
+                        <span class="text-xs font-semibold text-slate-400 mt-1 sm:mt-0"><i class="fa-solid fa-circle-check text-emerald-500 mr-1"></i>Selesai</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Kerangka Sistem, UI/UX Mockup, & Development</h3>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-blue mt-1"></i> Penentuan Niche Keahlian & Copywriting Konten Landing Page.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-blue mt-1"></i> Pembuatan Design UI/UX Mockup di Figma & Slicing HTML/CSS.</li>
+                    </ul>
+                </div>
+
+                <!-- Fase 2 -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border-l-4 border-brand-orange shadow-sm">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-3">
+                        <span class="px-3 py-1 rounded-md bg-orange-100 text-brand-orange text-xs font-bold inline-block w-fit">FASE 2 (01 - 08 NOVEMBER 2026)</span>
+                        <span class="text-xs font-semibold text-slate-400 mt-1 sm:mt-0"><i class="fa-solid fa-circle-check text-emerald-500 mr-1"></i>Selesai</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Testing Sistem, Debugging, & Peer Review</h3>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Pengujian Fungsionalitas Link & Evaluasi Peer Review dengan 2 Teman Sekelas.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-orange mt-1"></i> Optimasi Mobile Responsive, Kecepatan Loading, & Bebas Bug Tampilan.</li>
+                    </ul>
+                </div>
+
+                <!-- Fase 3 -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border-l-4 border-emerald-500 shadow-sm">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-3">
+                        <span class="px-3 py-1 rounded-md bg-emerald-100 text-emerald-700 text-xs font-bold inline-block w-fit">FASE 3 (09 - 14 NOVEMBER 2026)</span>
+                        <span class="text-xs font-semibold text-slate-400 mt-1 sm:mt-0"><i class="fa-solid fa-spinner animate-spin text-brand-blue mr-1"></i>Final Stage</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Finishing, GitHub Push, Deployment, & Pitching</h3>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Polishing Detail SEO & Upload Project ke GitHub Public + README.md.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Live Deployment (Vercel/Netlify) & Presentasi Pitching (3 Menit).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-orange text-sm font-bold uppercase tracking-wider">Mari Terhubung</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Hubungi Saya</h2>
+                    <p class="text-slate-400 text-base leading-relaxed">
+                        Tertarik bekerja sama atau ingin bertanya seputar pembuatan landing page? Silakan hubungi saya melalui saluran kontak berikut:
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <a href="https://wa.me/6281234567890" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 transition group">
+                            <div class="w-12 h-12 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl group-hover:scale-110 transition">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block">WhatsApp Direct</span>
+                                <span class="text-sm font-semibold text-white">+62 812-3456-7890</span>
+                            </div>
+                        </a>
+
+                        <a href="mailto:hayaandn@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 transition group">
+                            <div class="w-12 h-12 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl group-hover:scale-110 transition">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block">Email Official</span>
+                                <span class="text-sm font-semibold text-white">hayaandn@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/hafidzadityazaini" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 transition group">
+                            <div class="w-12 h-12 rounded-lg bg-slate-700 text-white flex items-center justify-center text-xl group-hover:scale-110 transition">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block">GitHub Profile</span>
+                                <span class="text-sm font-semibold text-white">github.com/hafidzaditya</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.instagram.com/douuts/" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 transition group">
+                            <div class="w-12 h-12 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center text-xl group-hover:scale-110 transition">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block">Instagram</span>
+                                <span class="text-sm font-semibold text-white">@douuts</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Form -->
+                <div class="lg:col-span-7 bg-slate-800 p-8 rounded-3xl border border-slate-700/60 shadow-xl">
+                    <h3 class="text-2xl font-bold text-white mb-6">Kirim Pesan</h3>
+                    <form onsubmit="alert('Pesan berhasil terkirim!'); return false;" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nama Lengkap</label>
+                            <input type="text" placeholder="Masukkan nama kamu" required class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-brand-blue transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Alamat Email</label>
+                            <input type="email" placeholder="nama@email.com" required class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-brand-blue transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Pesan / Penawaran Proyek</label>
+                            <textarea rows="4" placeholder="Tuliskan pesan kamu di sini..." required class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-brand-blue transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-xl bg-brand-blue hover:bg-blue-600 font-bold text-white shadow-lg transition">
+                            Kirim Pesan Sekarang
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 <span class="text-white font-semibold">Muhammad Hafidz Aditya Zaini</span>. All Rights Reserved.</p>
+            <p class="text-xs text-slate-500 mt-1">Project 1.0 Landing Page Personal Branding - Kelas 12</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR TYPING EFFECT & PARTICLES -->
+    <script>
+        const words = ["Web Developer", "UI/UX Designer", "Freelancer", "Siswa Kelas 12"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById("typing-text");
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typingSpeed = isDeleting ? 60 : 120;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                typingSpeed = 1800;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typingSpeed = 400;
+            }
+
+            setTimeout(typeEffect, typingSpeed);
+        }
+        document.addEventListener("DOMContentLoaded", typeEffect);
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const particlesArray = [];
+        const particleCount = 45;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.speedY = (Math.random() - 0.5) * 0.8;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.fillStyle = '#94a3b8';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particlesArray.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+
+                for (let j = i + 1; j < particlesArray.length; j++) {
+                    const dx = particlesArray[i].x - particlesArray[j].x;
+                    const dy = particlesArray[i].y - particlesArray[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 130) {
+                        ctx.strokeStyle = `rgba(148, 163, 184, ${1 - distance / 130})`;
+                        ctx.lineWidth = 0.6;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+    </script>
+</body>
+</html>
